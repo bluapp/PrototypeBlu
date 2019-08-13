@@ -1,0 +1,37 @@
+﻿@page "{id:guid}"
+@model WebRazor.Pages.Linhas.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+@*@ViewContext.RouteData.Values["id"]; Esse cara funciona*@
+
+<div class="container">
+    <h1>Editar Linhas</h1>
+
+    <form method="post">
+        <input asp-for="lineID" type="hidden" />
+        <div class="form-group col-md-4">
+            <input asp-for="number" type="text" class="form-control" placeholder="Digite o número da linha" />
+        </div>
+        <div class="form-group col-md-4">
+            <input asp-for="description" type="text" class="form-control" placeholder="Digite a descrição da linha" />
+        </div>
+        <div class="form-group col-md-4">
+            <select asp-for="ticketID" id="inputState" class="form-control">
+                <option selected>Tarifa...</option>
+
+                @{
+                    foreach (var item in Model.tickets)
+                    {
+                        <option value="@item.ID">@item.Price.ToString("C")</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <h1>@Model.Message</h1>
+        </div>
+    </form>
+</div>

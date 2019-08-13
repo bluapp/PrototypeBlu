@@ -1,0 +1,12 @@
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.deps.json
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.dll
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csprojAssemblyReference.cache
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.AssemblyInfoInputs.cache
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.AssemblyInfo.cs
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.pdb
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Models.dll
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Models.pdb
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csproj.CopyComplete
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.dll
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.pdb

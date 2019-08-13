@@ -1,0 +1,47 @@
+﻿@page
+@model WebRazor.Pages.Linhas.LinhasModel
+@{
+    ViewData["Title"] = "Linhas";
+}
+
+<div class="container linhas">
+    <h1>Linhas</h1>
+
+    <form method="post">
+
+        <div class="form-group">
+            <input asp-for="busca" type="text" class="form-control" placeholder="Pesquisar">
+        </div>
+        <div class="form-group">
+            <button asp-page-handler="Buscar" type="submit" class="btn btn-custom">Buscar</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Linha</th>
+                    <th>Descrição</th>
+                    <th>Tarifa</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var line in Model.linhas)
+                {
+                    <tr>
+                        <td>@line.Number</td>
+                        <td>@line.Description</td>
+                        <td>@line.Ticket.Price.ToString("C")</td>
+                        <td>
+                            <a class="btn btn-primary" asp-page="Edit" asp-route-id="@line.ID">Editar</a>
+                            @*<button class="btn btn-danger" type="submit" asp-page-handler="delete" asp-route-id="@line.ID">Deletar</button>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-secondary" asp-page-handler="MostrarTudo">Mostrar Tudo</button>
+        <a class="btn btn-success" asp-page="Create">Adicionar</a>
+    </form>
+</div>

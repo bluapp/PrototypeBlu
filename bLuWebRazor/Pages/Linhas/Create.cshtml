@@ -1,0 +1,33 @@
+﻿@page
+@model WebRazor.Pages.Linhas.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container linhas">
+    <h1>Adicionar Linhas</h1>
+    <form method="post">
+        <div class="form-group col-md-4">
+            <input asp-for="number" type="text" class="form-control" placeholder="Digite o número da linha" />
+        </div>
+        <div class="form-group col-md-4">
+            <input asp-for="description" type="text" class="form-control" placeholder="Digite a descrição da linha" />
+        </div>
+        <div class="form-group col-md-4">
+            <select asp-for="TicketID" id="inputState" class="form-control">
+                <option selected>Tarifa...</option>
+
+                @{
+                    foreach (var item in Model.tickets)
+                    {
+                        <option value="@item.ID">@item.Price.ToString("C")</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <h1>@Model.Message</h1>
+        </div>
+    </form>
+</div>
