@@ -1,4 +1,7 @@
-﻿.linhas {
+﻿*{
+    font-family: Arial, sans-serif;
+}
+.linhas {
     text-align: center;
 }
 
