@@ -33,7 +33,7 @@ namespace Call
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("token", tokenacesso);
-                client.BaseAddress = new Uri("https://localhost:5000/api/");
+                client.BaseAddress = new Uri("https://localhost:3001/api/");
                 client.Timeout = TimeSpan.FromMinutes(10);
                 var res = client.GetAsync(controller).Result;
                 if (res.IsSuccessStatusCode)
