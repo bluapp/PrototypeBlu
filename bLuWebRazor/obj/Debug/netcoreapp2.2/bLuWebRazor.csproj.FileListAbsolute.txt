@@ -41,3 +41,4 @@ C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcorea
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\Razor\Pages\Tarifas\Tarifas.cshtml.g.cs
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\Razor\Pages\Login.cshtml.g.cs

@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bLuApi", "bLuApi\bLuApi.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bLuWebRazor", "..\bLuWebRazor\bLuWebRazor.csproj", "{94310879-808C-4F2B-86BB-D28AEEF0F6FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Call", "..\Call\Call.csproj", "{4637D012-F2CD-4DAC-B9A2-973788FADDB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Call", "..\Call\Call.csproj", "{4637D012-F2CD-4DAC-B9A2-973788FADDB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\Models\Models.csproj", "{B3A3A778-2274-4668-AA35-0CA161B364F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.csproj", "{B3A3A778-2274-4668-AA35-0CA161B364F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

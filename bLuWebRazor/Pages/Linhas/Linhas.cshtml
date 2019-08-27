@@ -25,7 +25,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
                 @foreach (var line in Model.linhas)
                 {
                     <tr>
@@ -41,7 +41,29 @@
             </tbody>
         </table>
 
-        <button type="submit" class="btn btn-secondary" asp-page-handler="MostrarTudo">Mostrar Tudo</button>
+        <button id="mostrarTudo" type="button" class="btn btn-secondary">Mostrar Tudo</button>
         <a class="btn btn-success" asp-page="Create">Adicionar</a>
     </form>
 </div>
+
+<script>
+    $("#mostrarTudo").click(function () {
+        $.ajax({
+            url: "http://localhost:5000/api/Linhas/GetLines",
+            type: 'get',
+            dataType: "json",
+            success: function (lines) {
+                //$("#Cidades").append('<option value="">(cidade)</option>')
+                $.each(lines, function (i, line) {
+                    $("#tableBody").empty;
+                    $("#tableBody").append('<tr><td>' + line.number + '</td><td>' + line.description + '</td><td>' + line.price.toLocaleString("pt-BR", { style: "currency" , currency:"BRL"}) + '</td><td><a class="btn btn-primary" href="/Linhas/Edit/' + line.id + '">Editar</a></td></tr>');
+                })
+            },
+            error: function (ex) {
+                alert('Ops, erro ao carregar as Linhas. ' + ex);
+            }
+        });
+
+        return false;
+    });
+</script>

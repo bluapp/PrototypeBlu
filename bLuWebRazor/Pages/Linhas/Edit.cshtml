@@ -18,8 +18,6 @@
         </div>
         <div class="form-group col-md-4">
             <select asp-for="ticketID" id="inputState" class="form-control">
-                <option selected>Tarifa...</option>
-
                 @{
                     foreach (var item in Model.tickets)
                     {

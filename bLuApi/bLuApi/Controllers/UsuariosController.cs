@@ -41,6 +41,17 @@ namespace API.Controllers
             return dt;
         }
 
+        [Route("GetUser/{uid}")]
+        [HttpGet]
+        public async Task<DataTable> GetUser([FromRoute] Guid uid)
+        {
+            DAL bd = new DAL();
+            string sql = $"select * from user_enterprise where id = {uid}";
+            DataTable dt = bd.RetDataTable(sql);
+            bd.FecharConexao();
+            return dt;
+        }
+
         [Route("Logar/{login}/{password}")]
         [HttpGet]
         public async Task<DataTable> Logar([FromRoute] string login, [FromRoute] string password)
@@ -49,15 +60,19 @@ namespace API.Controllers
             DataTable dt = new DataTable();
             try
             {
-                string sql = $"select * from login_user where login = '{login}' and password = '{password}'";
+                string sql = $"select u.id, u.name, lu.login, u.permission from " +
+                    $"login_user_enterprise as lu inner join user_enterprise as u on " +
+                    $"lu.user_enterprise_id = u.id where lu.login = '{login}' and lu.password = '{password}'";
                 dt = bd.RetDataTable(sql);
                 bd.FecharConexao();
-                return dt;
+
+                if (dt.Rows.Count != 0) { return dt; }
+                else { return null; }
             }
-            catch 
+            catch
             {
                 bd.FecharConexao();
-                return dt;
+                return null;
             }
         }
     }

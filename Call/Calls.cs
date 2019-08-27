@@ -19,6 +19,10 @@ namespace Call
         {
             return await GetAsync<DataTable>("", "usuarios/GetUsers");
         }
+        public async static Task<DataTable> GetUser(Guid uid)
+        {
+            return await GetAsync<DataTable>("", $"usuarios/GetUser/{uid}");
+        }
 
         public async static Task<DataTable> Logar(string login, string password)
         {

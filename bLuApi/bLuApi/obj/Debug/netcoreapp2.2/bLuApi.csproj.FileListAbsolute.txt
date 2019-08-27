@@ -1,8 +1,13 @@
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\bLuApi.deps.json
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\bLuApi.runtimeconfig.json
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\bLuApi.runtimeconfig.dev.json
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\bLuApi.dll
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\bLuApi.pdb
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\Models.dll
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\Models.pdb
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.csprojAssemblyReference.cache
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.csproj.CoreCompileInputs.cache
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.RazorAssemblyInfo.cache
@@ -10,11 +15,6 @@ C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcor
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.AssemblyInfoInputs.cache
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.AssemblyInfo.cs
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.RazorTargetAssemblyInfo.cache
+C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.csproj.CopyComplete
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.dll
 C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.pdb
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\appsettings.Development.json
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\appsettings.json
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\Models.dll
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\bin\Debug\netcoreapp2.2\Models.pdb
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\bLuApi\bLuApi\obj\Debug\netcoreapp2.2\bLuApi.csproj.CopyComplete
