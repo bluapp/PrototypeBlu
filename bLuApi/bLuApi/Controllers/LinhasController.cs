@@ -4,13 +4,11 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
 namespace API.Controllers
 {
-    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class LinhasController : ControllerBase
@@ -67,7 +65,7 @@ namespace API.Controllers
 
             try
             {
-                string sql = $"update line as l set l.number = {linhas.Number}, l.description = '{linhas.Description}', l.ticket_id = '{linhas.Ticket.ID}', l.alter_date = '{linhas.Alter_Date}' where l.id = '{linhas.ID}'";
+                string sql = $"insert into historic_line values(uuid(), '{linhas.Number}', '{linhas.Ticket.ID}', '{linhas.ID}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{linhas.Description}', 'PENDENTE')";
                 bd.ExecutarComandoSQL(sql);
                 bd.FecharConexao();
                 return true;
@@ -95,6 +93,59 @@ namespace API.Controllers
             {
                 return false;
             }
+        }
+
+        [Route("GetAltersToAprove")]
+        [HttpGet]
+        public async Task<DataTable> GetAltersToAprove()
+        {
+            DAL bd = new DAL();
+            DataTable dt = bd.RetDataTable("select * from historic_line inner join ticket on ticket.id = line_aux.ticket_id where status = 'PENDENTE'");
+            bd.FecharConexao();
+            return dt;
+
+        }
+
+        [Route("AproveEditLines")]
+        [HttpPost]
+        public async Task<bool> AproveEditLines([FromBody] Guid Alter_ID)
+        {
+            DAL bd = new DAL();
+
+            try
+            {
+                string sql = $"update historic_line set status = 'APROVADO', alter_date = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' where id = '{Alter_ID}'";
+                bd.ExecutarComandoSQL(sql);
+                sql = $"update line set number = (select number from historic_line where id = '{Alter_ID}')," +
+                        $" ticket_id = (select ticket_id from historic_line where id = '{Alter_ID}')," +
+                        $" description = (select description from historic_line where id = '{Alter_ID}')," +
+                        $" alter_date = NOW()" +
+                        $" " +
+                        " where id = (select line_id from historic_line where id = '{Alter_ID}')";
+                bd.ExecutarComandoSQL(sql);
+                bd.FecharConexao();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        [Route("RejectEditLines")]
+        [HttpPost]
+        public async Task<bool> RejectEditLines([FromBody] Guid Alter_ID)
+        {
+            DAL bd = new DAL();
+
+            try
+            {
+                string sql = $"update historic_line set status = 'CANCELADO', alter_date = NOW() where id = '{Alter_ID}'";
+                bd.ExecutarComandoSQL(sql);
+                bd.FecharConexao();
+                return true;
+            }
+            catch (Exception ex) { return false; }
         }
     }
 }

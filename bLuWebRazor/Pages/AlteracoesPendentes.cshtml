@@ -1,0 +1,49 @@
+﻿@page
+@model bLuWebRazor.Pages.AlteracoesPendentesModel
+@{
+    ViewData["Title"] = "AlteracoesPendentes";
+}
+
+<div class="container-fluid linhas">
+    <h1>Gerenciar Alterações</h1>
+    @{
+        if (String.IsNullOrEmpty(Model.msg))
+        {
+            <p class="">@Model.msg</p>
+        }
+        else
+        { <p class="alert alert-danger">@Model.msg</p>}
+    }
+    <form method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Linha</th>
+                    <th>Descrição</th>
+                    <th>Tarifa</th>
+                    <th>Data da Alteração</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @foreach (var item in Model.alters)
+                {
+                    <tr>
+                        <td>@item.Number</td>
+                        <td>@item.Description</td>
+                        <td>@item.Ticket.Price.ToString("C")</td>
+                        <td>@item.Alter_Date</td>
+                        <td>@item.Description</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <button type="submit" class="btn btn-success" asp-page="AlteracoesPendentes" asp-route-id="@item.Alter_ID">Aprovar</button>
+                            <button type="submit" class="btn btn-danger" asp-page="AlteracoesPendentes" asp-page-handler="Cancelar" asp-route-id="@item.Alter_ID">Cancelar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>

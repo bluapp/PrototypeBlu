@@ -8,17 +8,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebRazor.Pages
 {
-    public class MenuModel : MyPageModel
+    public class MenuComumModel : MyPageModel
     {
         public string permission;
         public IActionResult OnGet()
         {
             if (String.IsNullOrEmpty(HttpContext.Session.GetString("SessionUid"))) { return RedirectToPage("Login"); }
-            else
-            {
-                if (HttpContext.Session.GetString("SessionPermission").ToUpper() == "ADM") { return Page(); }
-                else { return RedirectToPage("MenuComum"); }
-            }
+            else { return Page(); }
         }
     }
 }

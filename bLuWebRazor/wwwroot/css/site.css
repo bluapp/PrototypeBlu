@@ -38,9 +38,7 @@ thead {
 
 .menu-item {
     margin-top: 5%;
-    box-shadow: 2px 2px 20px -5px #000;
-    border-radius: 20px;
-    padding: 5%;
+    padding: 1%;
     text-align: center;
 }
 /****************************** HTML CUSTOM ***************************/

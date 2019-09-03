@@ -48,7 +48,8 @@ namespace bLuWebRazor.Pages
                     HttpContext.Session.SetString("SessionPermission", row.ItemArray[3].ToString());
                 }
 
-                return RedirectToPage("Menu");
+                if (HttpContext.Session.GetString("SessionPermission").ToUpper() == "ADM") { return RedirectToPage("Menu"); }
+                else { return RedirectToPage("MenuComum"); }
             }
             else
             {

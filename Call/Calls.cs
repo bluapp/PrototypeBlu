@@ -54,6 +54,21 @@ namespace Call
             return await PostAsync<bool>("", "Linhas/EditLines", linha);
         }
 
+        public async static Task<DataTable> GetAltersToAprove()
+        {
+            return await GetAsync<DataTable>("", "Linhas/GetAltersToAprove");
+        }
+
+        public async static Task<bool> AproveEditLines(Guid alterID)
+        {
+            return await PostAsync<bool>("", "Linhas/AproveEditLines", alterID);
+        }
+
+        public async static Task<bool> RejectEditLines(Guid alterID)
+        {
+            return await PostAsync<bool>("", "Linhas/RejectEditLines", alterID);
+        }
+
         public async static Task<bool> CreateLines(Linhas newLinha)
         {
             return await PostAsync<bool>("", $"Linhas/CreateLines", newLinha);
