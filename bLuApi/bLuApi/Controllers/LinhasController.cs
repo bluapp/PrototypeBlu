@@ -57,6 +57,23 @@ namespace API.Controllers
             return dt;
         }
 
+        [Route("CodeQR/{code}")]
+        [HttpGet]
+        public async Task<DataTable> CodeQR([FromRoute] string code)
+        {
+
+            string sql = $@"select lc.car_id, lc.line_id, c.code, l.number,l.description, l.ticket_id, t.price from line_car as lc
+                            inner join line as l on l.id = lc.line_id
+                            inner join car as c on c.id = lc.car_id
+                            inner join ticket as t on t.id = l.ticket_id
+                            where c.code = {code};";
+
+            DAL bd = new DAL();
+            DataTable dt = bd.RetDataTable(sql);
+            bd.FecharConexao();
+            return dt;
+        }
+
         [Route("EditLines")]
         [HttpPost]
         public bool EditLines([FromBody] Linhas linhas)
