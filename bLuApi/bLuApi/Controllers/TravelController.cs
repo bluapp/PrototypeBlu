@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.IdentityModel.Tokens.Jwt;
 using System.Threading.Tasks;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +15,11 @@ namespace API.Controllers
         [HttpGet]
         public async Task<bool> RegisterTravel([FromRoute] string code, [FromRoute] string user_id)
         {
-            return GetTravelInformations(code, user_id);
+            Travel travel = GetTravelInformations(code, user_id);
+           return InsertTravel(travel, user_id);
         }
 
-        private bool GetTravelInformations(string code, string userId)
+        private Travel GetTravelInformations(string code, string userId)
         {
             DAL bd = new DAL();
             Travel travel = new Travel();
@@ -39,19 +38,47 @@ namespace API.Controllers
                 dt = bd.RetDataTable(sql);
                 bd.FecharConexao();
 
-                DataRow[] rows= dt.Select(); 
-                travel = LoadAttributes(rows);
-
-               return InsertTravel(travel, userId);
-
+                DataRow[] rows = dt.Select(); 
+                return LoadAttributes(rows);
             }
             catch (Exception e)
             {
                 bd.FecharConexao();
-                return false;
+                throw new Exception(e.Message, e);
             }
         }
 
+        public bool InsertTravel(Travel travel, string userId)
+        {
+            DAL bd = new DAL();
+            try
+            {
+                string sql = $@"insert into travel_user (
+                                    id, user_id, travel_id, register_date, price_ticket
+                                )
+                                values (
+                                    uuid(), '{userId}', '{travel.id}', now(), {travel.price}
+                                );";
+                                
+                bd.ExecutarComandoSQL(sql);
+                bd.FecharConexao();
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e);
+            }
+        }
+        
+        [Route("RegisterTravel/Receipt/{userId}")]
+        [HttpGet]
+        public void Receipt([FromRoute] string userId, string travelId)
+        {
+            var userController = new UsuariosController();
+            Usuarios user = userController.GetUserById(userId);
+            Enterprise enterprise = new EnterpriseController().GetEnterpriseInfo(travelId);
+        }
+        
         private Travel LoadAttributes(DataRow[] rows)
         {
             Travel travel = new Travel();
@@ -66,33 +93,6 @@ namespace API.Controllers
                 travel.code = row["code"].ToString();
             }
             return travel;
-        }
-
-        public bool InsertTravel(Travel travel, string userId)
-        {
-            DAL bd = new DAL();
-
-            try
-            {
-                string sql = $@"insert into travel_user (
-                                    id, user_id, travel_id, register_date, price_ticket
-                                )
-                                values (
-                                    uuid(), '{userId}', '{travel.id}', now(), {travel.price}
-                                );";
-                                
-                bd.ExecutarComandoSQL(sql);
-                bd.FecharConexao();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-        public void Receipt()
-        {
-
         }
     }
 }

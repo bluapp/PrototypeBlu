@@ -38,6 +38,20 @@ namespace API.Controllers
             return dt;
         }
 
+        [Route("GetUserById")]
+        [HttpGet]
+        public Usuarios GetUserById(string id)
+        {
+            DAL bd = new DAL();
+            string sql = $@"select * from user
+                            where id = '{id}'";
+            DataTable dt = bd.RetDataTable(sql);
+            bd.FecharConexao();
+                        
+            DataRow[] rows = dt.Select(); 
+            return LoadAttributes(rows);
+        }
+
         [Route("Logar/{login}/{password}")]
         [HttpGet]
         public async Task<DataTable> Logar([FromRoute] string login, [FromRoute] string password)
@@ -56,6 +70,19 @@ namespace API.Controllers
                 bd.FecharConexao();
                 return dt;
             }
+        }
+
+        private Usuarios LoadAttributes(DataRow[] rows)
+        {
+            var obj = new Usuarios();
+            foreach (var row in rows)
+            {
+                obj.ID = row["id"].ToString();
+                obj.Nome = row["name"].ToString();
+                obj.DtNasc = row["birth_date"].ToString();
+                obj.Email = string.IsNullOrEmpty(row["email"].ToString()) ? null : row["email"].ToString();
+            }
+            return obj;
         }
     }
 }
