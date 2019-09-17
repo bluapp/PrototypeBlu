@@ -19,15 +19,14 @@ namespace API.Controllers
             var enterprise = new Enterprise();
             try
             {
-                string sql = $@"select c.name as city, s.uf, e.name, 
+                string sql = $@"select e.id, c.name as city, s.uf, e.name, 
                                        e.individual_registration
                                     from enterprise as e
                                 inner join driver d on e.id = d.enterprise_id
                                 inner join travel t on d.id = t.driver_id
-                                inner join travel_user tu on t.id = tu.travel_id
                                 inner join city c on e.city_id = c.id
                                 inner join state s on c.state_id = s.id
-                                where tu.travel_id = '{travelId}';";
+                                where t.id = '{travelId}';";
                 DataTable dt = new DataTable();
                 dt = bd.RetDataTable(sql);
                 bd.FecharConexao();
