@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using API.Models;
@@ -41,6 +38,20 @@ namespace API.Controllers
             return dt;
         }
 
+        [Route("GetUserById")]
+        [HttpGet]
+        public Usuarios GetUserById(string id)
+        {
+            DAL bd = new DAL();
+            string sql = $@"select * from user
+                            where id = '{id}'";
+            DataTable dt = bd.RetDataTable(sql);
+            bd.FecharConexao();
+                        
+            DataRow[] rows = dt.Select(); 
+            return LoadAttributes(rows);
+        }
+
         [Route("GetUser/{uid}")]
         [HttpGet]
         public async Task<DataTable> GetUser([FromRoute] Guid uid)
@@ -74,6 +85,19 @@ namespace API.Controllers
                 bd.FecharConexao();
                 return null;
             }
+        }
+
+        private Usuarios LoadAttributes(DataRow[] rows)
+        {
+            var obj = new Usuarios();
+            foreach (var row in rows)
+            {
+                obj.ID = row["id"].ToString();
+                obj.Nome = row["name"].ToString();
+                obj.DtNasc = row["birth_date"].ToString();
+                obj.Email = string.IsNullOrEmpty(row["email"].ToString()) ? null : row["email"].ToString();
+            }
+            return obj;
         }
     }
 }

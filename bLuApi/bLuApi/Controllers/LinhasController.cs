@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +50,23 @@ namespace API.Controllers
         {
             DAL bd = new DAL();
             string sql = $"select l.id, l.number, l.description, l.ticket_id, t.price from line as l inner join ticket as t on l.ticket_id = t.id where number like '%{busca}%' or description like '%{busca}%';";
+            DataTable dt = bd.RetDataTable(sql);
+            bd.FecharConexao();
+            return dt;
+        }
+
+        [Route("CodeQR/{code}")]
+        [HttpGet]
+        public async Task<DataTable> CodeQR([FromRoute] string code)
+        {
+
+            string sql = $@"select lc.car_id, lc.line_id, c.code, l.number,l.description, l.ticket_id, t.price from line_car as lc
+                            inner join line as l on l.id = lc.line_id
+                            inner join car as c on c.id = lc.car_id
+                            inner join ticket as t on t.id = l.ticket_id
+                            where c.code = {code};";
+
+            DAL bd = new DAL();
             DataTable dt = bd.RetDataTable(sql);
             bd.FecharConexao();
             return dt;
@@ -149,3 +164,5 @@ namespace API.Controllers
         }
     }
 }
+
+
