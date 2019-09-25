@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using API.Models;
@@ -54,10 +55,10 @@ namespace API.Controllers
 
         [Route("GetUser/{uid}")]
         [HttpGet]
-        public async Task<DataTable> GetUser([FromRoute] Guid uid)
+        public async Task<DataTable> GetUser([FromRoute] System.Guid uid)
         {
             DAL bd = new DAL();
-            string sql = $"select * from user_enterprise where id = {uid}";
+            string sql = $"select * from user_enterprise where id = {uid.ToString()}";
             DataTable dt = bd.RetDataTable(sql);
             bd.FecharConexao();
             return dt;

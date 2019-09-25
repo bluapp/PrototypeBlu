@@ -1,0 +1,17 @@
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.csprojAssemblyReference.cache
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.csproj.CoreCompileInputs.cache
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.RazorAssemblyInfo.cache
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.RazorAssemblyInfo.cs
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.AssemblyInfoInputs.cache
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.AssemblyInfo.cs
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/bLuApi.deps.json
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/bLuApi.runtimeconfig.json
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/bLuApi.runtimeconfig.dev.json
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/bLuApi.dll
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/bLuApi.pdb
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/Models.dll
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/bin/Debug/netcoreapp2.2/Models.pdb
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.RazorTargetAssemblyInfo.cache
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.csproj.CopyComplete
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.dll
+/home/igor/projects/blu/PrototypeBlu/bLuApi/bLuApi/obj/Debug/netcoreapp2.2/bLuApi.pdb
