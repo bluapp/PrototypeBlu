@@ -33,7 +33,6 @@ namespace API.Controllers
                 price = travelUser.price_ticket,
                 user_id = user.ID,
                 name = user.Nome,
-                login = user.Login,
                 email = user.Email,
                 city = enterprise.city, 
                 uf = enterprise.uf, 

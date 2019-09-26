@@ -11,7 +11,7 @@ namespace API.Controllers
     [ApiController]
     public class EnterpriseController : ControllerBase
     {
-        [Route("RegisterTravel/{code}/{user_id}")]
+        [Route("GetInfo/{travelId}")]
         [HttpGet]
         public Enterprise GetEnterpriseInfo(string travelId)
         {
@@ -47,10 +47,10 @@ namespace API.Controllers
             foreach (var row in rows)
             {
                 obj.id = row["id"].ToString();
-                obj.name = row["name"].ToString();
-                obj.individual_registration = row["individual_registration"].ToString();
-                obj.city = row["city"].ToString(); 
+                obj.city = row["city"].ToString();
                 obj.uf = row["uf"].ToString();
+                obj.name = row["name"].ToString(); 
+                obj.individual_registration = row["individual_registration"].ToString();
             }
             return obj;
         }
