@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
@@ -59,13 +60,13 @@ namespace API.Controllers
 
         [Route("EditLines")]
         [HttpPost]
-        public bool EditLines([FromBody] Linhas linhas)
+        public bool EditLines([FromBody] LinhasAlter linhas)
         {
             DAL bd = new DAL();
 
             try
             {
-                string sql = $"insert into historic_line values(uuid(), '{linhas.Number}', '{linhas.Ticket.ID}', '{linhas.ID}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{linhas.Description}', 'PENDENTE')";
+                string sql = $"insert into historic_line values(uuid(), '{linhas.Number}', '{linhas.Ticket.ID}', '{linhas.ID}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{linhas.Description}', 'PENDENTE', '{linhas.UserID}', null)";
                 bd.ExecutarComandoSQL(sql);
                 bd.FecharConexao();
                 return true;
@@ -100,7 +101,7 @@ namespace API.Controllers
         public async Task<DataTable> GetAltersToAprove()
         {
             DAL bd = new DAL();
-            DataTable dt = bd.RetDataTable("select * from historic_line inner join ticket on ticket.id = line_aux.ticket_id where status = 'PENDENTE'");
+            DataTable dt = bd.RetDataTable("select * from historic_line inner join ticket on ticket.id = historic_line.ticket_id where status = 'PENDENTE'");
             bd.FecharConexao();
             return dt;
 
@@ -108,20 +109,19 @@ namespace API.Controllers
 
         [Route("AproveEditLines")]
         [HttpPost]
-        public async Task<bool> AproveEditLines([FromBody] Guid Alter_ID)
+        public async Task<bool> AproveEditLines([FromBody] LinhasAlter linhas)
         {
             DAL bd = new DAL();
 
             try
             {
-                string sql = $"update historic_line set status = 'APROVADO', alter_date = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' where id = '{Alter_ID}'";
+                string sql = $"update historic_line set status = 'APROVADO', alter_date = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', aprove_user = '{linhas.UserID}' where id = '{linhas.Alter_ID}'";
                 bd.ExecutarComandoSQL(sql);
-                sql = $"update line set number = (select number from historic_line where id = '{Alter_ID}')," +
-                        $" ticket_id = (select ticket_id from historic_line where id = '{Alter_ID}')," +
-                        $" description = (select description from historic_line where id = '{Alter_ID}')," +
+                sql = $"update line set number = (select number from historic_line where id = '{linhas.Alter_ID}')," +
+                        $" ticket_id = (select ticket_id from historic_line where id = '{linhas.Alter_ID}')," +
+                        $" description = (select description from historic_line where id = '{linhas.Alter_ID}')," +
                         $" alter_date = NOW()" +
-                        $" " +
-                        " where id = (select line_id from historic_line where id = '{Alter_ID}')";
+                        $" where id = (select line_id from historic_line where id = '{linhas.Alter_ID}')";
                 bd.ExecutarComandoSQL(sql);
                 bd.FecharConexao();
                 return true;
@@ -134,13 +134,13 @@ namespace API.Controllers
 
         [Route("RejectEditLines")]
         [HttpPost]
-        public async Task<bool> RejectEditLines([FromBody] Guid Alter_ID)
+        public async Task<bool> RejectEditLines([FromBody] LinhasAlter linhas)
         {
             DAL bd = new DAL();
 
             try
             {
-                string sql = $"update historic_line set status = 'CANCELADO', alter_date = NOW() where id = '{Alter_ID}'";
+                string sql = $"update historic_line set status = 'CANCELADO', alter_date = NOW(), aprove_user = '{linhas.UserID}' where id = '{linhas.Alter_ID}'";
                 bd.ExecutarComandoSQL(sql);
                 bd.FecharConexao();
                 return true;

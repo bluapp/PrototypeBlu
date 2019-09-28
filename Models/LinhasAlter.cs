@@ -14,5 +14,6 @@ namespace Models
         public string Alter_Date { get; set; }
         public Guid Alter_ID { get; set; }
         public string Status { get; set; }
+        public Guid UserID { get; set; }
     }
 }

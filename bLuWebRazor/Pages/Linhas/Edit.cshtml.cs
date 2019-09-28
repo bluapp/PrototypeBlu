@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -48,7 +49,7 @@ namespace WebRazor.Pages.Linhas
 
         public ActionResult OnPost()
         {
-            Models.Linhas linhas = new Models.Linhas();
+            Models.LinhasAlter linhas = new Models.LinhasAlter();
             Models.Ticket ticket = new Models.Ticket();
             linhas.ID = lineID;
             linhas.Number = number.Trim().ToUpper();
@@ -57,6 +58,7 @@ namespace WebRazor.Pages.Linhas
             ticket.ID = ticketID;
             ticket.Alter_Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             linhas.Ticket = ticket;
+            linhas.UserID = Guid.Parse(HttpContext.Session.GetString("SessionUid"));
 
             if (ModelState.IsValid)
             {

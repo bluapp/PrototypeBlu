@@ -49,7 +49,7 @@ namespace Call
             return await GetAsync<DataTable>("", $"Linhas/SearchLines/{busca}");
         }
 
-        public async static Task<bool> EditLines(Linhas linha)
+        public async static Task<bool> EditLines(LinhasAlter linha)
         {
             return await PostAsync<bool>("", "Linhas/EditLines", linha);
         }
@@ -59,14 +59,14 @@ namespace Call
             return await GetAsync<DataTable>("", "Linhas/GetAltersToAprove");
         }
 
-        public async static Task<bool> AproveEditLines(Guid alterID)
+        public async static Task<bool> AproveEditLines(LinhasAlter linhas)
         {
-            return await PostAsync<bool>("", "Linhas/AproveEditLines", alterID);
+            return await PostAsync<bool>("", "Linhas/AproveEditLines", linhas);
         }
 
-        public async static Task<bool> RejectEditLines(Guid alterID)
+        public async static Task<bool> RejectEditLines(LinhasAlter linhas)
         {
-            return await PostAsync<bool>("", "Linhas/RejectEditLines", alterID);
+            return await PostAsync<bool>("", "Linhas/RejectEditLines", linhas);
         }
 
         public async static Task<bool> CreateLines(Linhas newLinha)
