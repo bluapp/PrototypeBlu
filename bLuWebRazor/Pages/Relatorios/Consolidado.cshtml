@@ -1,0 +1,64 @@
+﻿@page
+@model bLuWebRazor.Pages.Relatorios.ConsolidadoModel
+@{
+    ViewData["Title"] = "Consolidado";
+}
+
+    <div style="padding-left: 5%; padding-right: 5%;">
+        <h1>Relatório Consolidado</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">QR Code</th>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Identificador</th>
+                    <th scope="col">Quantidade de Bilhetes</th>
+                    <th scope="col">Quantidade de Usuários</th>
+                    <th scope="col">Linha</th>
+                    <th scope="col">Abertura</th>
+                    <th scope="col">Fechamento</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Motorista</th>
+                    <th scope="col">Tarifa</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @for (int i = 0; i < Model.consolidadoDT.Rows.Count; i++)
+                {
+                    <tr>
+                        <td>@Model.consolidadoDT.Rows[i]["qrcode"].ToString()</td>
+                        <td>@Model.consolidadoDT.Rows[i]["license_plate"].ToString()</td>
+                        <td>@Model.consolidadoDT.Rows[i]["qrcode"].ToString()</td>
+                        <td>@Model.consolidadoDT.Rows[i]["qtde_bilhetes"].ToString()</td>
+                        <td>@Model.consolidadoDT.Rows[i]["qtde_usuarios"].ToString()</td>
+                        <td>@Model.consolidadoDT.Rows[i]["line"].ToString()</td>
+                        <td>@DateTime.Parse(Model.consolidadoDT.Rows[i]["start_time"].ToString()).ToString("dd/MM/yyyy HH:mm")</td>
+                        @{
+                            if (String.IsNullOrEmpty(Model.consolidadoDT.Rows[i]["finish_time"].ToString()))
+                            {
+                                <td>Viagem ainda em aberto!</td>
+                            }
+                            else
+                            {
+                                <td>@DateTime.Parse(Model.consolidadoDT.Rows[i]["finish_time"].ToString()).ToString("dd/MM/yyyy HH:mm")</td>
+                            }
+                        }
+                        @{
+                            if (bool.Parse(Model.consolidadoDT.Rows[i]["status"].ToString()))
+                            {
+                                <td>Aberta</td>
+                            }
+                            else
+                            {
+                                <td>Fechada</td>
+                            }
+                        }
+                        <td>@Model.consolidadoDT.Rows[i]["driver"].ToString()</td>
+                        <td>@double.Parse(Model.consolidadoDT.Rows[i]["ticket_price"].ToString()).ToString("C")</td>
+                        <td>@double.Parse(Model.consolidadoDT.Rows[i]["total_price"].ToString()).ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

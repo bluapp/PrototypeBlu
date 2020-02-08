@@ -56,7 +56,6 @@ C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\bin\Debug\netcoreapp2.2\Mode
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\bin\Debug\netcoreapp2.2\Call.pdb
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\bin\Debug\netcoreapp2.2\Models.pdb
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.csprojAssemblyReference.cache
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.csproj.CoreCompileInputs.cache
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.RazorAssemblyInfo.cache
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.RazorAssemblyInfo.cs
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.AssemblyInfoInputs.cache
@@ -87,3 +86,6 @@ C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuW
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.csproj.CopyComplete
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.dll
 C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\bLuWebRazor.pdb
+C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\Razor\Pages\Relatorios\Consolidado.cshtml.g.cs
+C:\Users\mathe\Dropbox\Blu\PrototypeBlu\bLuWebRazor\obj\Debug\netcoreapp2.2\Razor\Pages\Relatorios\PorCarro.cshtml.g.cs

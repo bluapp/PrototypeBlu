@@ -78,5 +78,15 @@ namespace Call
         {
             return await GetAsync<DataTable>("", $"Tickets/GetTickets");
         }
+
+        public async static Task<DataTable> GetRelatorioConsolidado()
+        {
+            return await GetAsync<DataTable>("", "Usuarios/GetRelatorioConsolidado");
+        }
+
+        public async static Task<DataTable> GetRelatorioByCar()
+        {
+            return await GetAsync<DataTable>("", $"Usuarios/GetRelatorioByCar");
+        }
     }
 }

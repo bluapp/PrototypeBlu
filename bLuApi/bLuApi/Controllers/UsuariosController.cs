@@ -75,5 +75,69 @@ namespace API.Controllers
                 return null;
             }
         }
+
+        [Route("GetRelatorioConsolidado")]
+        [HttpGet]
+        public async Task<DataTable> GetRelatorioConsolidado()
+        {
+            DAL bd = new DAL();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "select qr.code as qrCode, qr.active as status, b.code as busCode, b.license_plate, " +
+                                "t.start_time, t.finish_time, t.active as status, count(distinct(tu.user_id)) as qtde_usuarios, count(tu.user_id) as qtde_bilhetes, tu.price_ticket as ticket_price, sum(tu.price_ticket) as total_price, " +
+                                "l.number as line, d.name as driver " +
+                                "from qr_code as qr " +
+                                "inner join car as b on qr.code = b.code " +
+                                "inner join travel as t on b.id = t.car_id " +
+                                "inner join travel_user as tu on t.id = tu.travel_id " +
+                                "inner join line as l on t.bus_line_id = l.id " +
+                                "inner join driver as d on t.driver_id = d.id " +
+                                "where qr.active;";
+                dt = bd.RetDataTable(sql);
+                bd.FecharConexao();
+
+                if (dt.Rows.Count != 0) { return dt; }
+                else { return null; }
+            }
+            catch (Exception ex)
+            {
+                bd.FecharConexao();
+                return null;
+            }
+        }
+
+        [Route("GetRelatorioByCar")]
+        [HttpGet]
+        public async Task<DataTable> GetRelatorioByCar()
+        {
+            DAL bd = new DAL();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "select qr.code as qrcode, b.code, b.license_plate, " +
+                                "tu.id as travel_user, tu.user_id as travel_user_id, u.name as user_name, t.id as travel_id, t.start_time, t.finish_time, l.number as line, d.name as driver_name, tu.price_ticket " +
+                                "from car as b " +
+                                "inner join qr_code as qr on b.code = qr.code " +
+                                "inner join travel as t on b.id = t.car_id " +
+                                "inner join travel_user as tu on t.id = tu.travel_id " +
+                                "inner join user as u on tu.user_id = u.id " +
+                                "inner join line as l on t.bus_line_id = l.id " +
+                                "inner join driver as d on t.driver_id = d.id " +
+                                $"where qr.active; ";
+                dt = bd.RetDataTable(sql);
+                bd.FecharConexao();
+
+                if (dt.Rows.Count != 0) { return dt; }
+                else { return null; }
+            }
+            catch (Exception ex)
+            {
+                bd.FecharConexao();
+                return null;
+            }
+        }
     }
 }
