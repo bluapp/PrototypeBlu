@@ -1,23 +1,34 @@
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.deps.json
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.dll
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csprojAssemblyReference.cache
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csproj.CoreCompileInputs.cache
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.AssemblyInfoInputs.cache
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.AssemblyInfo.cs
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.pdb
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Models.dll
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Models.pdb
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csproj.CopyComplete
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.dll
-C:\Users\Matheus Afonsos\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.pdb
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.deps.json
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.dll
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Call.pdb
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Models.dll
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\bin\Debug\netstandard2.0\Models.pdb
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csprojAssemblyReference.cache
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.AssemblyInfoInputs.cache
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.AssemblyInfo.cs
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.csproj.CopyComplete
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.dll
-C:\Users\mathe\Dropbox\Blu\PrototypeBlu\Call\obj\Debug\netstandard2.0\Call.pdb
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.deps.json
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.dll
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csprojAssemblyReference.cache
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csproj.CoreCompileInputs.cache
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.AssemblyInfoInputs.cache
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.AssemblyInfo.cs
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.pdb
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Models.dll
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Models.pdb
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csproj.CopyComplete
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.dll
+C:/Users/Matheus Afonsos/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.pdb
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.deps.json
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.dll
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.pdb
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Models.dll
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Models.pdb
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csprojAssemblyReference.cache
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.AssemblyInfoInputs.cache
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.AssemblyInfo.cs
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csproj.CopyComplete
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.dll
+C:/Users/mathe/Dropbox/Blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.pdb
+/home/igor/projects/blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.deps.json
+/home/igor/projects/blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.dll
+/home/igor/projects/blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Call.pdb
+/home/igor/projects/blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Models.dll
+/home/igor/projects/blu/PrototypeBlu/Call/bin/Debug/netstandard2.0/Models.pdb
+/home/igor/projects/blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csprojAssemblyReference.cache
+/home/igor/projects/blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.AssemblyInfoInputs.cache
+/home/igor/projects/blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.AssemblyInfo.cs
+/home/igor/projects/blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.csproj.CopyComplete
+/home/igor/projects/blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.dll
+/home/igor/projects/blu/PrototypeBlu/Call/obj/Debug/netstandard2.0/Call.pdb
