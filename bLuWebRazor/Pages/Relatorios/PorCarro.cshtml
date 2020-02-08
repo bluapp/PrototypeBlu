@@ -1,0 +1,66 @@
+﻿@page
+@model bLuWebRazor.Pages.Relatorios.PorCarroModel
+@{
+    ViewData["Title"] = "PorCarro";
+}
+
+<div style="padding-left: 5%; padding-right: 5%;">
+
+    <h1>Relatório Por Carro</h1>
+
+    <form method="post">
+        @*<div class="form-group">
+            <input asp-for="busca" type="text" class="form-control" placeholder="Pesquisar">
+        </div>
+        <div class="form-group">
+            <button asp-page-handler="Buscar" type="submit" class="btn btn-custom">Buscar</button>
+        </div>*@
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">QR Code</th>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Identificador</th>
+                    @*<th scope="col">ID da Viagem</th>*@
+                    <th scope="col">ID do Usuário</th>
+                    <th scope="col">Nome Usuário</th>
+                    <th scope="col">ID da Viagem</th>
+                    <th scope="col">Abertura</th>
+                    <th scope="col">Fechamento</th>
+                    <th scope="col">Linha</th>
+                    <th scope="col">Motorista</th>
+                    <th scope="col">Tarifa</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @for (int i = 0; i < Model.relatorioDT.Rows.Count; i++)
+                {
+                    <tr>
+                        <td>@Model.relatorioDT.Rows[i]["qrcode"].ToString()</td>
+                        <td>@Model.relatorioDT.Rows[i]["license_plate"].ToString()</td>
+                        <td>@Model.relatorioDT.Rows[i]["qrcode"].ToString()</td>
+                        @*<td>@Model.relatorioDT.Rows[i]["travel_user"].ToString()</td>*@
+                        <td>@Model.relatorioDT.Rows[i]["travel_user_id"].ToString()</td>
+                        <td>@Model.relatorioDT.Rows[i]["user_name"].ToString()</td>
+                        <td>@Model.relatorioDT.Rows[i]["travel_id"].ToString()</td>
+                        <td>@DateTime.Parse(Model.relatorioDT.Rows[i]["start_time"].ToString()).ToString("dd/MM/yyyy HH:mm")</td>
+                        @{
+                            if (String.IsNullOrEmpty(Model.relatorioDT.Rows[i]["finish_time"].ToString()))
+                            {
+                                <td>Viagem ainda em aberto!</td>
+                            }
+                            else
+                            {
+                                <td>@DateTime.Parse(Model.relatorioDT.Rows[i]["finish_time"].ToString()).ToString("dd/MM/yyyy HH:mm")</td>
+                            }
+                        }
+                        <td>@Model.relatorioDT.Rows[i]["line"].ToString()</td>
+                        <td>@Model.relatorioDT.Rows[i]["driver_name"].ToString()</td>
+                        <td>@double.Parse(Model.relatorioDT.Rows[i]["price_ticket"].ToString()).ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>
